@@ -1,0 +1,41 @@
+
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Toàn bộ dữ liệu runtime (DB, settings có API key, cache, log, browser profile, export)
+data/*
+!data/.gitkeep
+!data/README.md
+
+build/
+dist/
+
+# Trang HTML chụp khi đang đăng nhập (có email/token phiên) — chỉ giữ ở máy
+providers/stock/envato/page_samples/*.html
+providers/google_flow/page_samples/*.html
+
+outputs/**
+outputs/*/*.mp4
+outputs/*/*/*.mp4
+outputs/*/*/*/*.mp4
+outputs
+sites
+.DS_Store
+youtube-suite
+youtube_suite/*
+outputs/001_king-tiger/demo
+raw/assets/video-doi-thu
+*.mp4
+
+raw/assets/video-doi-thu
+
+
+# Khóa API cục bộ, không đưa lên git
+.secrets/
+
+# Bản cũ/backup, không đẩy
+tools/video/legacy_001/
+tools/*.tgz

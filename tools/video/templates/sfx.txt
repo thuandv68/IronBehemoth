@@ -1,0 +1,8 @@
+# file  beat[+/-giây] | t=giây   volume  [thời lượng]
+mk_war_ambience.mp3   t=0       0.35  6
+sfx_wind.mp3          t=0       0.30  12
+mk_hatch_slam.mp3     B012+0.1  0.9
+mk_trailer_riser.mp3  B013-2.6  0.5
+mk_big_impact.mp3     B013      0.95
+mk_rocket_ignition.mp3 B015-0.2 0.85
+mk_war_field_explosion.mp3 B016+2.4 0.95

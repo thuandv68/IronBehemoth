@@ -1,0 +1,19 @@
+{
+  "ep": "002",
+  "name": "Sturmtiger",
+  "csv": "beats/beats_002_sturmtiger.csv",
+  "voice": "audio/voice.mp3",
+  "music": "audio/music.mp3",
+  "music_ss": 0,
+  "music_vol": 0.22,
+  "tempo": 1.0,
+  "delay": 0.6,
+  "end_at": "",
+  "endcard_tail": 10,
+  "skip_ai": [],
+  "delogo": [1132, 572, 58, 58],
+  "delogo_providers": ["flow", "veo", "google"],
+  "duck": [],
+  "loudness": -15,
+  "merge_under": 1.6
+}
