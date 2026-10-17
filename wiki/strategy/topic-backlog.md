@@ -21,6 +21,12 @@ sources: [raw/competitors/2026-10-11_blue-paw-print-inside-series.md]
 | 005 | **Jagdtiger** | WWII Monsters | Xe bọc thép nặng nhất đưa vào thực chiến WWII | 3 | 5 | 2 | 4 | 14 |
 | 006 | **Leopard 2** | Modern Steel | Xe tăng phương Tây phổ biến nhất, chiến trường Ukraine | 5 | 3 | 4 | 4 | 16 |
 
+## Đã sản xuất ngoài đợt 1
+- 002 Sturmtiger (đã dựng 2026-10-15).
+- 003 **Maus**: "Life Inside the Maus: The World's Heaviest Tank Ever Built", script 2026-10-15. Đối thủ Blue Paw Print 4,89M view; IB đánh góc đời sống kíp lái + Kubinka ghép 2 xe.
+
+- 004 **FV101 Scorpion** (chọn 17/10/2026): "xe tăng nhanh nhất thế giới" – kỷ lục Guinness 82,23 km/h (2002). Abrams lùi sang tập sau (đã có nghiên cứu + dàn ý + demo trong 004_abrams).
+
 ## Kho dự trữ
 **WWII:** IS-2, Elefant/Ferdinand, Jagdpanther, M26 Pershing, Churchill (Crocodile), Char B1 bis, Char 2C (xe tăng lớn nhất từng đưa vào biên chế), T-35 (5 tháp pháo), Panzer IV, T-28, M3 Lee, Matilda II, KV-1, ISU-152.
 **Hiện đại:** T-90M, Challenger 2, Merkava IV, K2 Black Panther, T-14 Armata, Type 99A, Leclerc, M10 Booker, T-72.

@@ -13,8 +13,8 @@ Làm tự động, giữa các phase chỉ báo 1–2 câu bằng tiếng Việt
 - Kịch bản mẫu: một file (`script.txt`) hoặc folder đối thủ (script + video + voice). Thiếu một trong hai → hỏi ngay, không đoán.
 
 ## Phase 0 — Chuẩn bị
-- Số tập NNN = số lớn nhất trong `outputs/` + 1; slug = tên xe viết thường, gạch nối (`002_sturmtiger`).
-- Tạo `outputs/NNN_slug/`, chép mẫu vào `outputs/NNN_slug/doi-thu/` (giữ nguyên, không sửa). Lưu bản gốc vào `raw/assets/video-doi-thu/<TenVideo>/` nếu chưa có.
+- Số tập NNN = số lớn nhất trong `IronBehemoth-Videos/` + 1; slug = tên xe viết thường, gạch nối (`002_sturmtiger`).
+- Tạo `IronBehemoth-Videos/NNN_slug/`, chép mẫu vào `IronBehemoth-Videos/NNN_slug/doi-thu/` (giữ nguyên, không sửa). Lưu bản gốc vào `raw/assets/video-doi-thu/<TenVideo>/` nếu chưa có.
 
 ## Phase 1 — Phân tích kịch bản mẫu → `analysis_NNN.md`
 - Tổng số từ; nếu có video/voice: thời lượng (ffprobe) và wpm.
@@ -52,7 +52,7 @@ Bảng claim | kết luận | nguồn cho mọi con số và khẳng định. Kh
 Độ dài, voiceover-ready, câu dài, danh sách từ khó đọc cho TTS, tính nhất quán con số, open loop đã trả lời, vị trí CTA, chính sách, fact. Ghi bảng QC vào `review_NNN.md`.
 
 ## Phase 9 — `notes.md` và đóng sổ
-- `notes.md` theo format `outputs/002_sturmtiger/notes.md`: số từ/thời lượng, vị trí subscribe, nghịch lý trung tâm, 3 câu hỏi, open loop, 3 tiêu đề, bảng thông số dùng trong script (giá trị + ghi chú), nguồn, gợi ý description (EN), chapters ước tính.
+- `notes.md` theo format `IronBehemoth-Videos/002_sturmtiger/notes.md`: số từ/thời lượng, vị trí subscribe, nghịch lý trung tâm, 3 câu hỏi, open loop, 3 tiêu đề, bảng thông số dùng trong script (giá trị + ghi chú), nguồn, gợi ý description (EN), chapters ước tính.
 - Chỉ giữ bản cuối: `script.md`, `analysis_NNN.md`, `review_NNN.md`, `notes.md`, `doi-thu/`.
 - Thêm dòng `produce` vào `log.md`, cập nhật `wiki/strategy/topic-backlog.md` và `index.md`.
 - Báo: số từ, thời lượng ước tính, 3 tiêu đề; gợi ý chạy `ib-assets`.
