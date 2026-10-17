@@ -36,15 +36,25 @@ Cập nhật: 2026-10-11 · 21 trang wiki · 5 nguồn raw
 
 ## Xe tăng
 - [[king-tiger]] — `wiki/tanks/king-tiger.md` — Tập 001, nghịch lý nhiên liệu, La Gleize.
+- [[maus]] — `wiki/tanks/maus.md` — Tập 003, nặng nhất từng chế tạo, kíp lái tự phá, Kubinka ghép 2 xe.
+
+## Kênh Skyline Rewind (@SkylineRewind, kênh riêng, chung não)
+- [[city-overview]] — `wiki/skyline-rewind/channel/city-overview.md` — Ý tưởng, định vị đề xuất, quyết định chờ chốt, thành phố ứng viên.
+- [[city-format-blueprint]] — `wiki/skyline-rewind/format/city-format-blueprint.md` — Công thức tiêu đề, thumbnail, cấu trúc "Today → rewind", description.
+- [[city-pipeline]] — `wiki/skyline-rewind/production/city-pipeline.md` — Giả thuyết pipeline open data + OSM + 3D, thư mục sản xuất dự kiến.
+- [[cornerstone-timelapse]] — `wiki/skyline-rewind/competitors/cornerstone-timelapse.md` — Kênh mẫu: 4 video, ~1,14 triệu view/15 ngày, điểm mạnh/yếu.
+- `raw/skyline-rewind/competitors/2026-10-17_cornerstone-timelapse.md` — Dữ liệu thô Cornerstone Timelapse.
 
 ## Nguồn raw
 - `raw/competitors/2026-10-11_blue-paw-print-inside-series.md` — Dữ liệu Blue Paw Print.
 - `raw/keywords/2026-10-11_vidiq-keyword-research.md` — Keyword vidIQ (12 seed, volume/competition/overall).
 - `raw/references/2026-10-11_llm-wiki-pattern.md` — Tóm tắt mô hình LLM Wiki.
 - `raw/references/2026-10-11_owner-decisions.md` — Các quyết định của chủ kênh.
+- `raw/tanks/2026-10-15_maus.md` — Ghi chú nghiên cứu Maus (Guinness, Wikipedia, Panzerworld, Tank Archives).
 
 ## Skills
 - `ib-episode` — `.claude/skills/ib-episode/SKILL.md` — Kịch bản 16–20 phút cho format "Inside the [Xe]": hook, crew, firepower, armor, engine, battle, legacy.
 
 ## Outputs
-- `outputs/001_king-tiger/` — script.md, notes.md
+- `IronBehemoth-Videos/001_king-tiger/` — script.md, notes.md
+- `IronBehemoth-Videos/003_maus/` — script.md, analysis_003.md, review_003.md, notes.md

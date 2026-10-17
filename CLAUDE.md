@@ -4,6 +4,8 @@ Bạn là người bảo trì "bộ não 2" của kênh YouTube **IronBehemoth**
 
 ## Cấu trúc
 
+Thư mục này **chỉ chứa não 2** (kiến thức). Mọi thứ sản xuất (các tập video, tool dựng, website) nằm ở thư mục anh em `Youtube-AI/IronBehemoth-Videos/` (tách ngày 2026-10-16). Đường dẫn `IronBehemoth-Videos/...` trong wiki và skill tính từ thư mục `Youtube-AI/`; lệnh `python3 IronBehemoth-Videos/tools/video/...` chạy từ `Youtube-AI/`. Key API vẫn ở `IronBehemoth/.secrets/` (không đưa sang thư mục video).
+
 | Đường dẫn | Vai trò | Ai ghi |
 |---|---|---|
 | `raw/` | Nguồn thô: dữ liệu đối thủ, tài liệu xe tăng, ghi chú nghiên cứu, ảnh (`raw/assets/`). **Không bao giờ sửa** sau khi thêm. | Người dùng / LLM khi ingest dữ liệu thu thập |
@@ -14,10 +16,23 @@ Bạn là người bảo trì "bộ não 2" của kênh YouTube **IronBehemoth**
 | `wiki/strategy/` | Backlog chủ đề, phát hành & tăng trưởng, rủi ro | LLM |
 | `wiki/competitors/` | Hồ sơ đối thủ | LLM |
 | `wiki/tanks/` | Một trang cho mỗi xe tăng (tạo khi nghiên cứu tập) | LLM |
-| `outputs/NNN_slug/` | Sản phẩm từng tập: script, publish, shot plan, beat index, footage list | LLM |
+| `../IronBehemoth-Videos/NNN_slug/` | (ngoài thư mục này) Sản phẩm từng tập: script, publish, shot plan, beat index, footage list | LLM |
 | `.claude/skills/` | Skill dự án: `ib-episode` (làm tập), `ib-wiki` (ingest/query/lint) | Người dùng + LLM |
 | `index.md` | Danh mục mọi trang wiki, theo nhóm, mỗi dòng 1 câu tóm tắt | LLM, cập nhật mỗi lần ingest |
 | `log.md` | Nhật ký chỉ-thêm của ingest / query / lint / produce | LLM |
+
+## Não dùng chung nhiều kênh (từ 2026-10-17)
+
+Não này dùng chung cho nhiều kênh; mỗi kênh có thương hiệu, skill và thư mục sản xuất riêng.
+
+| Kênh | Wiki | Raw | Sản xuất |
+|---|---|---|---|
+| IronBehemoth (xe tăng) | `wiki/` (các nhóm channel/format/production/strategy/competitors/tanks ở gốc) | `raw/` (gốc) | `Youtube-AI/IronBehemoth-Videos/` |
+| Skyline Rewind (@SkylineRewind; 3D timelapse lịch sử thành phố) | `wiki/skyline-rewind/` (channel/format/production/strategy/competitors/cities) | `raw/skyline-rewind/` | `Youtube-AI/SkylineRewind-Videos/` |
+
+- Trang của kênh không phải IronBehemoth có thêm trường frontmatter `channel: <slug>`; tên file phải duy nhất toàn não (vd. `city-overview`, không dùng `overview`).
+- "Quy tắc cứng của kênh" bên dưới chỉ áp dụng cho IronBehemoth; quy tắc kênh Skyline Rewind nằm ở [[city-overview]] và [[city-format-blueprint]].
+- Skill `ib-*` chỉ dành cho IronBehemoth.
 
 ## Quy ước trang wiki
 
@@ -26,7 +41,7 @@ Bạn là người bảo trì "bộ não 2" của kênh YouTube **IronBehemoth**
 - Một chủ đề một trang. Sự thật luôn dẫn nguồn `raw/...` hoặc URL. Thông số kỹ thuật chưa kiểm chứng đánh dấu `(cần kiểm chứng)`.
 - Nội dung nội bộ viết tiếng Việt; mọi thứ lên kênh (title, description, script) viết tiếng Anh.
 
-## Quy tắc cứng của kênh
+## Quy tắc cứng của kênh (IronBehemoth)
 
 - Thời lượng video **16:00–16:59** (mục tiêu 16:30). Lời dẫn **2.320–2.460 từ** (~145 wpm; hiệu chỉnh theo giọng TTS thực tế).
 - Script **voiceover-ready**: không ngoặc, không ký hiệu sản xuất, không tiêu đề chương trong lời đọc.
@@ -50,7 +65,7 @@ Bạn là người bảo trì "bộ não 2" của kênh YouTube **IronBehemoth**
 Kiểm tra: mâu thuẫn giữa các trang, trang mồ côi (không có trong index), liên kết hỏng, thông số `(cần kiểm chứng)` tồn đọng, backlog lỗi thời. Ghi kết quả vào log.
 
 ### Produce (làm tập)
-Theo skill `ib-episode`. Kết quả vào `outputs/NNN_slug/`, tạo/cập nhật `wiki/tanks/<xe>.md`, cập nhật [[topic-backlog]], ghi log.
+Theo skill `ib-episode`. Kết quả vào `IronBehemoth-Videos/NNN_slug/`, tạo/cập nhật `wiki/tanks/<xe>.md`, cập nhật [[topic-backlog]], ghi log.
 
 ## Định dạng log
 

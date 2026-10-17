@@ -129,3 +129,56 @@
 - 2026-10-14: duyệt lần 2 tài nguyên 002: đủ 180/180, cắt B024/B109/B069, thay tạm B038 bằng B037; sẵn sàng ib-build
 - 2026-10-15: thay 12 beat có chữ vạn/sai xe (5 clip Flow mới đã xóa watermark Veo, 7 beat dùng đoạn sạch của clip khác); check 180/180; tạo 29 đồ họa (build/gfx.txt), build/ib.json. Dừng ở bước voice: hệ thống chặn dùng API key ai33 từ trình duyệt/máy chủ, chờ anh quyết
 - 2026-10-15: voice ai33 xong (15:30, khớp 98%); 7 clip Flow Pro (có ảnh tham chiếu) thay B042/B043/B095/B102/B103/B151/B154/B162, sạch
+- 2026-10-15: ib-build xong 002: full/IB002_Sturmtiger_1080p.mp4 (16:09, 1080p, -15.9 LUFS, peak -2.6 dBFS, không khung đen). Nhạc "Sagas" (YouTube Audio Library). Chapters cập nhật trong notes.md, credits.md
+
+## [2026-10-15] produce | 003 Maus: "Life Inside the Maus: The World's Heaviest Tank Ever Built"
+- ib-script: analysis_003.md (đọc phụ đề Blue Paw Print trực tuyến, không tải/không lưu bản chép), script.md 2.448 từ (~16:32), review_003.md (board, chính sách, fact-check, QC), notes.md.
+- Xương sống: xe không súng nào bắn thủng, bị chính kíp lái phá; open loop Kubinka ghép 2 xe.
+- trang bị ảnh hưởng: [[maus]] · [[topic-backlog]] · index.md
+
+## [2026-10-15] assets | 003 Maus CSV (Muse/Flow 10s)
+- ib-assets: 184 beat, 111 veo3 / 35 footage / 38 image, ~16:35. File: outputs/003_maus/beats/beats_003_maus.csv
+- Khóa TANK chỉ câu khẳng định, không ghi tên xe trong prompt veo3; 55 beat có xe đều gắn ref_image (ref/maus_front34|side|front|rear34.jpg, chờ anh lấy ảnh Kubinka từ Wikimedia).
+- Hook B001–B019 làm dồn dập: pháo sáng chân trời, kíp lái tháo chạy, nổ, tháp văng (gắn DRAMATIZATION khi dựng).
+- 2026-10-15: duyệt 4 clip thử (B001/B002/B005/B006, tạo không có ảnh ref): B001 đạt; B002, B005 ra xe lai King Tiger/E-100 (tháp góc cạnh đặt giữa, tấm hông rời, lộ bánh, 2 nòng dài); B006 kíp lái mặc áo bông kiểu Liên Xô, xe không phải Maus. Viết lại khóa TANK (tháp tròn như bát úp đặt nửa sau, hông là một tấm phẳng liền, nòng phụ ngắn bằng 1/3) và CREW (áo panzer đen, mũ lưỡi trai đen), xuất lại CSV.
+- 2026-10-15: tải 4 ảnh ref Kubinka (Wikimedia, CC0/PD) vào outputs/003_maus/ref/, ghi nguồn ở ref/CREDITS.md
+- 2026-10-15: viết lại khóa TANK theo ảnh ref Kubinka (thân như viên gạch, tháp hình nêm mũi tròn ở nửa sau, nòng dài không phanh đầu nòng + nòng ngắn), thêm câu 'identical to the attached reference photo'
+- 2026-10-15: khóa xe theo từng ảnh ref (TANK_BY_REF), khóa bộ phận (PARTS: deck/turret/hull_dummy/twin) cho 11 beat, cột image_prompt cho 55 beat có xe (bước ảnh tĩnh Muse); bỏ ghi chú overlay ở B014/B052. Tool ib_beats.py hỗ trợ TANK_BY_REF/PARTS/STILL (bản cũ .bak_003); ghi vào skill ib-assets
+- 2026-10-15: CSV về đúng 10 cột mẫu (bỏ ref_image/image_prompt); ảnh ref + prompt ảnh tĩnh chuyển sang beats/refs_003_maus.md; sửa tool + skill
+- 2026-10-15: theo yêu cầu, chỉ bổ sung vào prompt: bỏ file phụ refs_003_maus.md và phần STILL; CSV đúng 10 cột mẫu
+- 2026-10-15: xóa 3 clip thử sai (B002/B005/B006), thư mục _check, _to_delete và tool backup; giữ B001
+- 2026-10-16: 12 beat veo3 Muse không tạo được (B012 B017 B018 B096 B103 B109 B113 B152 B166 B174 B176 B180) → viết lại nhẹ hơn (bỏ nổ/lửa/va chạm, chỉ còn khói và cảnh sau) + khóa xe gọn, file beats/beats_003_maus_redo.csv
+- 2026-10-16: Muse từ chối cảnh xe bị phá hủy/khói → B012, B180 chuyển sang ảnh tư liệu xác V2 1945; B018, B152, B176 viết lại thành xe còn nguyên, bỏ khói
+- 2026-10-16: QC Envato 003: ~30/38 ảnh sai xe; tạo beats/beats_003_maus_veo3_thaythe.csv (33 beat veo3 8s thay ảnh sai, khóa xe chi tiết theo góc ref; xe khác có khóa riêng T-34/T-34-85/Tiger I/Panther/IS-7/Sturmtiger)
+- 2026-10-16: đổi file thay thế thành prompt ẢNH (32 beat image, bỏ chuyển động camera) → beats/beats_003_maus_image_thaythe.csv
+- 2026-10-16: QC 8 ảnh Flow (ở 002_sturmtiger/_flow_new và _flow): đạt B038, museum Maus, IS-7, B007; sửa B032 (bản vẽ chưa phải Maus), B100 (không phải V12 ngược), B077 (đồng phục/bố cục), result_TEST_01 ra Panzer II (B183 Sturmtiger) → beats/beats_003_maus_image_fix.csv
+- 2026-10-16: theo nhận xét Claude Chrome (14/32 ảnh bị bộ lọc chặn): viết lại 32 prompt ảnh, bỏ German/Wehrmacht/Soviet/soldier/officer/quân phục/WWII/swastika, người → thợ máy/kỹ sư đồ bảo hộ hoặc áo dân sự, mô tả Maus đủ bằng chữ (ref chỉ là tùy chọn); gộp 4 bản sửa B032/B077/B100/B183, bỏ file image_fix
+- 2026-10-16: đổi tên 32 ảnh Flow trong outputs/_flow thành Bxxx_Axxx.jpg; B183 dùng thumbnail tập 002 (inside-the-sturmtiger.jpg)
+- 2026-10-16: chuyển 32 ảnh mới vào 003_maus/beats/footage, xóa ảnh Envato sai cùng beat; xóa thư mục _flow trống
+- 2026-10-16: xóa ảnh thu nhỏ cũ trong footage/thumbs của các file Envato đã xóa
+- 2026-10-16: QC 109 clip Muse: ~42 sai xe (ra Tiger/King Tiger/Panzer IV), 9 cần xem lại, Maus ngoài trời gần như không tạo đúng; 39 clip không phải 16:9
+- 2026-10-16: làm lại 42 clip Muse sai xe theo 2 bước: beats_003_maus_redo2_flow_image.csv (ảnh tĩnh Flow) + beats_003_maus_redo2_muse_video.csv (ảnh→video Muse, chỉ tả chuyển động)
+- 2026-10-16: test 2 bước (ảnh Flow → Muse) trên B002/B011/B018: cả 3 giữ đúng Maus suốt 10s, 1216x672; B018 camera lia theo người nên xe trôi khỏi khung cuối clip
+- 2026-10-16: viết lại 42 prompt Muse cho ổn định: khung CAMERA/FRAMING/TANK/MOTION/LOOK, camera giới hạn (tripod cố định hoặc dịch ≤10%, cấm pan/bám người), xe luôn nằm trọn khung
+- 2026-10-16: test lại B018 trên Muse: bản CAMERA/FRAMING vẫn trôi camera; bản 'still-camera shot, khung giữ y như ảnh, chỉ vật nhỏ chuyển động' giữ khung đứng yên, Maus ở nguyên trong khung 10s → viết lại 42 prompt theo kiểu này (34 still, 8 push nhẹ)
+- 2026-10-16: tải được video từ Muse qua Chrome (blob → file, lưu vào thư mục tải gần nhất là outputs/_flow); B018 bản still thay vào footage
+- 2026-10-16: chạy xong 42 clip Muse (ảnh Flow → video, prompt still-camera); QC 4 khung/clip, cả 42 đúng Maus; đã thay vào 003_maus/beats/footage (xoá clip sai cũ). B113 chạy lại lần 2 (lần 1 xe quay đầu)
+- 2026-10-16: lưu ý khi dựng: B014 nòng ra khỏi khung cuối clip (dùng ~6s đầu); B149 xe chạy xa dần; B050/B086/B096/B128/B153/B002 camera đẩy khá mạnh; B143 xe tải lấn che đầu xe; B158 máy quay lia sang cây cầu; B113 bên hông có vệt lưới hơi lạ
+- 2026-10-16: footage 003 còn thiếu B012, B180 (ảnh tư liệu xác xe) — chờ anh bổ sung
+- 2026-10-16: bổ sung B012 (ảnh IWM 1945: tháp pháo Maus tách khỏi thân trong nhà máy, PD) và B180 (ảnh Maus V2 thử nghiệm 1944, PD) vào footage 003 → đủ 184/184 beat; ghi nguồn vào ref/CREDITS.md
+
+## [2026-10-16] reorganize | Tách não 2 và sản xuất
+- Chuyển outputs/001_king-tiger, 002_sturmtiger, 003_maus, _flow, tools/, sites/ sang Youtube-AI/IronBehemoth-Videos/. IronBehemoth/ chỉ còn CLAUDE.md, index.md, log.md, wiki/, raw/, assets/, .claude/skills/, .secrets/.
+- Sửa đường dẫn: CSV beats (đường dẫn tuyệt đối), ib_tts.py (key đọc từ IronBehemoth/.secrets), BROWSER_SNIPPETS.md, CLAUDE.md, index.md, wiki/production/pipeline.md, wiki/tanks/, skill ib-assets, ib-build, ib-script. Các dòng log cũ giữ nguyên đường dẫn lịch sử outputs/.
+- 2026-10-16: ib-build 003 Maus: voice ai33 (Russ, speed 0.85, tạo trên web ai33) 15:23, căn beat 96,1%, tempo 0.95 → bản dựng IronBehemoth-Videos/003_maus/full/IB003_Maus_1080p.mp4 (16:21, −16 LUFS, peak −2,4 dBFS); 6 bài nhạc YouTube Audio Library theo chương + 14 SFX Mixkit mới; SRT khớp video full/IB003_Maus_EN.srt; ib_build.py thêm delogo_size (xoá ngôi sao Flow trên ảnh/clip Muse), ghi shot an toàn (.part) và --budget
+
+## [2026-10-17] setup | Thêm kênh riêng City Timelapse vào não chung
+- Kênh mới tách riêng khỏi IronBehemoth, chỉ dùng chung não. Namespace: wiki/city-timelapse/, raw/city-timelapse/; sản xuất dự kiến Youtube-AI/CityTimelapse-Videos/.
+- Ingest dữ liệu kênh Cornerstone Timelapse (4 video, số liệu 17/10) → raw/city-timelapse/competitors/2026-10-17_cornerstone-timelapse.md
+- Tạo trang: [[city-overview]], [[city-format-blueprint]], [[city-pipeline]], [[cornerstone-timelapse]]; cập nhật CLAUDE.md (bảng não nhiều kênh), index.md
+- 2026-10-17: tạo thư mục sản xuất Youtube-AI/CityTimelapse-Videos/ (README, _templates/description.md, _templates/publish-checklist.md, data/, tools/, assets/{branding,landmarks,music}); cập nhật CLAUDE.md, [[city-pipeline]]
+
+## [2026-10-17] setup | Chốt tên kênh Skyline Rewind (@SkylineRewind)
+- "City Timelapse" đã bị dùng nhiều (@CityTimelapse có chủ) → chốt Skyline Rewind, handle @SkylineRewind còn trống lúc kiểm tra.
+- Đổi namespace: wiki/city-timelapse → wiki/skyline-rewind, raw/city-timelapse → raw/skyline-rewind, Youtube-AI/CityTimelapse-Videos → Youtube-AI/SkylineRewind-Videos; frontmatter channel: skyline-rewind. Các dòng log cũ giữ đường dẫn lịch sử.
+- trang bị ảnh hưởng: [[city-overview]], [[city-format-blueprint]], [[city-pipeline]], [[cornerstone-timelapse]], CLAUDE.md, index.md
