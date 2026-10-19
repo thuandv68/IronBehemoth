@@ -37,13 +37,24 @@ Cập nhật: 2026-10-11 · 21 trang wiki · 5 nguồn raw
 ## Xe tăng
 - [[king-tiger]] — `wiki/tanks/king-tiger.md` — Tập 001, nghịch lý nhiên liệu, La Gleize.
 - [[maus]] — `wiki/tanks/maus.md` — Tập 003, nặng nhất từng chế tạo, kíp lái tự phá, Kubinka ghép 2 xe.
+- [[m1-abrams]] — `wiki/tanks/m1-abrams.md` — Tập 005, "The World's Most Powerful Tank", turbine 1.500 shp, 73 Easting.
+- [[scorpion]] — `wiki/tanks/scorpion.md` — Tập 004, xe tăng nhanh nhất (Guinness 82,23 km/h), máy Jaguar, Falklands 1982.
 
-## Kênh Skyline Rewind (@SkylineRewind, kênh riêng, chung não)
-- [[city-overview]] — `wiki/skyline-rewind/channel/city-overview.md` — Ý tưởng, định vị đề xuất, quyết định chờ chốt, thành phố ứng viên.
-- [[city-format-blueprint]] — `wiki/skyline-rewind/format/city-format-blueprint.md` — Công thức tiêu đề, thumbnail, cấu trúc "Today → rewind", description.
-- [[city-pipeline]] — `wiki/skyline-rewind/production/city-pipeline.md` — Giả thuyết pipeline open data + OSM + 3D, thư mục sản xuất dự kiến.
-- [[cornerstone-timelapse]] — `wiki/skyline-rewind/competitors/cornerstone-timelapse.md` — Kênh mẫu: 4 video, ~1,14 triệu view/15 ngày, điểm mạnh/yếu.
-- `raw/skyline-rewind/competitors/2026-10-17_cornerstone-timelapse.md` — Dữ liệu thô Cornerstone Timelapse.
+## Kênh City Timelapse (@CityTimelapseHQ đề xuất, kênh riêng, chung não)
+- [[city-overview]] — `wiki/city-timelapse/channel/city-overview.md` — Ý tưởng, định vị đề xuất, quyết định chờ chốt, thành phố ứng viên.
+- [[city-channel-setup]] — `wiki/city-timelapse/channel/city-channel-setup.md` — Thị trường tiếng Tây Ban Nha: 10 từ khóa kênh TBN (vidIQ 5K–50K) + tag video; bộ tiếng Anh làm tham chiếu.
+- [[city-format-blueprint]] — `wiki/city-timelapse/format/city-format-blueprint.md` — Công thức tiêu đề, thumbnail, cấu trúc "Today → rewind", description.
+- [[city-pipeline]] — `wiki/city-timelapse/production/city-pipeline.md` — Giả thuyết pipeline open data + OSM + 3D, thư mục sản xuất dự kiến.
+- [[city-muse-prompt-rules]] — `wiki/city-timelapse/production/city-muse-prompt-rules.md` — Quy tắc viết prompt Muse + quy trình QC, rút từ lỗi 001 CDMX (đọc trước khi viết prompt tập mới).
+- [[city-demo-001]] — `wiki/city-timelapse/production/city-demo-001.md` — Demo 58s CDMX: cấu trúc học từ mẫu, pipeline Veo + ffmpeg, lỗi và bài học.
+- [[roma]] — `wiki/city-timelapse/cities/roma.md` — Tập 001 Roma (tạm dừng): trạng thái, chương, lưu ý fact-check.
+- [[ciudad-de-mexico]] — `wiki/city-timelapse/cities/ciudad-de-mexico.md` — Tập 001 CDMX: kịch bản 50 beat, chương, sa bàn, lưu ý fact-check/chính sách.
+- [[las-vegas]] — `wiki/city-timelapse/cities/las-vegas.md` — Tập 002 Las Vegas: kịch bản 60 beat Veo 3 (~8:04), tiêu đề TBN + chữ tiếng Anh.
+- [[cornerstone-timelapse]] — `wiki/city-timelapse/competitors/cornerstone-timelapse.md` — Kênh mẫu: 4 video, ~1,14 triệu view/15 ngày, điểm mạnh/yếu.
+- `raw/city-timelapse/competitors/2026-10-17_cornerstone-timelapse.md` — Dữ liệu thô Cornerstone Timelapse.
+- `raw/city-timelapse/keywords/2026-10-17_city-demand-vidiq.md` — Nhu cầu tìm kiếm theo thành phố (ES/EN, vidIQ).
+- `raw/city-timelapse/keywords/2026-10-17_es-big-videos-and-vidiq.md` — Video lớn TBN + vidIQ seed TBN.
+- `raw/city-timelapse/keywords/2026-10-17_big-videos-and-vidiq.md` — 18 video lớn trong ngách + số liệu vidIQ.
 
 ## Nguồn raw
 - `raw/competitors/2026-10-11_blue-paw-print-inside-series.md` — Dữ liệu Blue Paw Print.
@@ -51,10 +62,14 @@ Cập nhật: 2026-10-11 · 21 trang wiki · 5 nguồn raw
 - `raw/references/2026-10-11_llm-wiki-pattern.md` — Tóm tắt mô hình LLM Wiki.
 - `raw/references/2026-10-11_owner-decisions.md` — Các quyết định của chủ kênh.
 - `raw/tanks/2026-10-15_maus.md` — Ghi chú nghiên cứu Maus (Guinness, Wikipedia, Panzerworld, Tank Archives).
+- `raw/tanks/2026-10-17_m1-abrams.md` — Ghi chú nghiên cứu Abrams (Wikipedia, Honeywell, CRS, 73 Easting).
+- `raw/tanks/2026-10-18_m1-abrams-bo-sung.md` — Bổ sung tập 005 (19FortyFive, Army Technology, AFV Database, HistoryNet, National Interest, CRS 4/2026).
+- `raw/tanks/2026-10-18_scorpion.md` — Ghi chú nghiên cứu Scorpion (Wikipedia FV101/CVR(T)/Tumbledown/Jaguar XK, History of War, Army Recognition, Military Trader, 1420kh, Think Defence, Poppyscotland).
 
 ## Skills
 - `ib-episode` — `.claude/skills/ib-episode/SKILL.md` — Kịch bản 16–20 phút cho format "Inside the [Xe]": hook, crew, firepower, armor, engine, battle, legacy.
 
 ## Outputs
 - `IronBehemoth-Videos/001_king-tiger/` — script.md, notes.md
+- `IronBehemoth-Videos/005_abrams/` — script.md, outline.md, review_005.md, notes.md, demo/, footage/
 - `IronBehemoth-Videos/003_maus/` — script.md, analysis_003.md, review_003.md, notes.md

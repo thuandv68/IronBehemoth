@@ -182,3 +182,202 @@
 - "City Timelapse" đã bị dùng nhiều (@CityTimelapse có chủ) → chốt Skyline Rewind, handle @SkylineRewind còn trống lúc kiểm tra.
 - Đổi namespace: wiki/city-timelapse → wiki/skyline-rewind, raw/city-timelapse → raw/skyline-rewind, Youtube-AI/CityTimelapse-Videos → Youtube-AI/SkylineRewind-Videos; frontmatter channel: skyline-rewind. Các dòng log cũ giữ đường dẫn lịch sử.
 - trang bị ảnh hưởng: [[city-overview]], [[city-format-blueprint]], [[city-pipeline]], [[cornerstone-timelapse]], CLAUDE.md, index.md
+
+## [2026-10-17] ingest | Từ khóa kênh Skyline Rewind
+- Lấy tag 33 video lớn trong ngách (YouTube) + đo vidIQ 3 seed → raw/skyline-rewind/keywords/2026-10-17_big-videos-and-vidiq.md
+- Chốt 10 từ khóa kênh 5K–50K đúng tuyến, xếp volume giảm dần → [[skyline-channel-setup]]; cập nhật index.md
+
+## [2026-10-17] setup | Đổi tên kênh thành City Timelapse
+- Chủ kênh chốt tên hiển thị "City Timelapse" (thay Skyline Rewind); handle cập nhật sau.
+- Đổi namespace về wiki/city-timelapse, raw/city-timelapse, Youtube-AI/CityTimelapse-Videos; trang skyline-channel-setup → [[city-channel-setup]]; frontmatter channel: city-timelapse.
+- trang bị ảnh hưởng: [[city-overview]], [[city-channel-setup]], [[city-format-blueprint]], [[city-pipeline]], [[cornerstone-timelapse]], CLAUDE.md, index.md
+
+## [2026-10-17] ingest | City Timelapse chuyển sang thị trường tiếng Tây Ban Nha
+- Chủ kênh chốt kênh tiếng Tây Ban Nha. Thu video lớn TBN + vidIQ 15 seed TBN → raw/city-timelapse/keywords/2026-10-17_es-big-videos-and-vidiq.md
+- Từ khóa đúng ngách TBN đều < 5K → 10 từ khóa kênh nới ra 3 trụ documental historia + animación 3D + ciudades; từ đúng ngách để tag video.
+- trang bị ảnh hưởng: [[city-channel-setup]], [[city-overview]], CLAUDE.md, index.md
+
+## [2026-10-17] setup | City Timelapse: logo, banner, mô tả kênh, disclaimer
+- Logo + banner tạo bằng ChatGPT (Chrome); logo cắt nền ngoài vòng tròn trong suốt (800, 1254, watermark 150); banner 2560×1440 dịch xuống 100 px cho vùng an toàn → Youtube-AI/CityTimelapse-Videos/assets/branding/
+- Mô tả kênh TBN (992 ký tự) + EN + mẫu disclaimer video → CityTimelapse-Videos/_templates/channel-about.md
+- trang bị ảnh hưởng: [[city-channel-setup]]
+- 2026-10-17: thêm tên kênh City Timelapse + handle đề xuất @CityTimelapseHQ (dự phòng @TheCityTimelapse, @CityTimelapseTV; cả 3 còn trống lúc kiểm tra) vào channel-about.md, [[city-overview]], [[city-channel-setup]], CLAUDE.md, index.md
+- 2026-10-17: thêm bộ hashtag TBN/EN (3 cố định + chủ đề + thành phố, ≤10/video) vào channel-about.md và [[city-channel-setup]]
+
+## [2026-10-17] produce | City Timelapse demo 001 Ciudad de México (58s)
+- Phân tích video mẫu Las Vegas (Cornerstone) → cấu trúc hook/tua ngược/title/chương/kết đêm.
+- 5 clip Veo 3.1 Lite (Flow) + nhạc YouTube Audio Library + 9 SFX Mixkit → CityTimelapse-Videos/001_ciudad-de-mexico/demo/CT001_CDMX_demo_1080p.mp4
+- Tool mới: CityTimelapse-Videos/tools/ct_build_demo.py, ct_mix_demo.py
+- trang bị ảnh hưởng: [[city-demo-001]]
+- 2026-10-17: demo 001 đổi endcard sang kiểu IB (Me gusta / Suscribirse→Suscrito / chuông + con trỏ + SFX click/bell), bỏ banner; tool ct_endcard.py; [[city-demo-001]]
+- 2026-10-17: query nhu cầu tìm kiếm theo thành phố (vidIQ ES/EN) → raw/city-timelapse/keywords/2026-10-17_city-demand-vidiq.md; cập nhật [[city-overview]]
+- 2026-10-17: thêm pipeline tập đầy đủ City Timelapse (không lời dẫn, 8:00–8:58, Muse 10s): tool ct_build.py, ct_csv.py; 3 skill ct-viet-kich-ban, ct-viet-prompt, ct-dung-video; [[city-pipeline]]
+
+## [2026-10-18] produce | Kịch bản 001 Roma
+- 50 beat (≈8:31), 10 chương, 37 caption ES; research.md có nguồn từng mốc; Publish ES (tiêu đề + A/B, thumbnail, description + chapters, tags); 3 bước kiểm tra (review board, policy, fact-check).
+- Sửa ct_build.py: năm a. C.; ghi chú Muse không watermark.
+- trang bị ảnh hưởng: [[roma]], [[city-pipeline]], index.md
+
+## [2026-10-18] produce | Prompt CSV 001 Roma
+- ct-viet-prompt: 50 prompt Muse 10s → `CityTimelapse-Videos/001_roma/prompts.json` + `001_beats.csv` (header khớp mau_beat, 81–110 từ, camera xoay vòng 6 kiểu, B016 viết thành "xây lại khu phố trống", không từ bị chặn). Bước tiếp: anh tạo clip Muse → footage/Bxxx_Axxx.mp4 → ct-dung-video.
+
+## [2026-10-18] fix | CSV 001 Roma bị báo không hợp lệ
+- Header/BOM/CRLF/10 cột khớp mau_beat; khác biệt duy nhất: visual_query 628–800 ký tự (mẫu ≤506), avoid tới 205 (mẫu ≤67). Viết lại v3 ngắn: visual_query ≤500, avoid ≤100, khóa phong cách sa bàn đất sét. Bài học: prompt Muse trong CSV giữ ≤500 ký tự.
+
+## [2026-10-18] fix | Prompt 001 Roma v4 — kéo về look demo
+- Muse ra chi tiết/ảnh thật hơn demo Veo. "tabletop diorama" làm Muse vẽ cả bàn + phòng (B003, B006) → bỏ. Khóa v4 = khóa demo gốc ("miniature architectural 3D model of a city, clean untextured clay-like…") + "simple smooth blocky shapes"; avoid thêm no textures/no fine detail/no table. Ảnh tham chiếu phong cách từ demo: 001_roma/ref/style_ref_*.png.
+
+## [2026-10-18] produce | Kịch bản 001 Ciudad de México (Roma tạm dừng)
+- Anh tạm dừng 001 Roma, làm tiếp 001 CDMX. Xem lại demo (Veo, 5 clip) → áp bài học vào kịch bản: sa bàn cố định hồ Texcoco + Chapultepec + Tepeyac + 2 núi lửa; cảnh hiện đại luôn có cây xanh/núi.
+- 50 beat (≈8:31), 8 chương, 41 caption ES → `CityTimelapse-Videos/001_ciudad-de-mexico/kich-ban.md`; nguồn từng mốc → `research.md`; Publish ES (tiêu đề + 2 A/B, thumbnail, description + chapters, tags); 3 bước kiểm tra.
+- trang bị ảnh hưởng: [[ciudad-de-mexico]], [[roma]], index.md
+
+## [2026-10-18] produce | Prompt CSV 001 Ciudad de México
+- So khung hình demo Veo với clip Muse Roma cũ (qc/style_compare.jpg): demo = nhà trắng/kem, nước xanh, núi xanh; Muse Roma lệch sang đất nặn hoặc ảnh thật; demo megalópolis bị sa mạc.
+- 50 prompt Muse 10s → `CityTimelapse-Videos/001_ciudad-de-mexico/prompts.json` + `001_beats.csv` (header/BOM/CRLF khớp mau_beat; visual_query 441–498 ký tự, avoid ≤98; 6 kiểu camera, không 3 beat liền cùng kiểu). Tool: `tools/_cdmx_prompts.py`.
+- Phát hiện lỗi: avoid riêng từng beat của Roma bị cắt hết vì phần avoid chung dài 98 ký tự.
+- trang bị ảnh hưởng: [[ciudad-de-mexico]], [[city-pipeline]]
+
+## [2026-10-18] fix | Prompt 001 CDMX B024 Muse không tạo được
+- Muse báo B024 ra thành phố chi tiết như thật, không thấy công trình mọc lên (2 lần). Nguyên nhân: chữ phong cách kiến trúc ("ornate baroque", "palaces of red volcanic stone") kéo về chi tiết thật.
+- Viết lại B024: camera cố định, "rises out of the ground block by block", avoid thêm no fine detail. Làm mềm trước B025, B027, B028, B033, B035, B037 (bỏ baroque/ornate/neoclassical/art deco/French-style). Bản cũ: 001_beats_v1.csv, prompts_v1.json.
+- Bài học: prompt Muse tả hình khối đơn giản, không dùng tên phong cách kiến trúc.
+
+## [2026-10-18] qc | 001 CDMX footage B001–B032
+- Kỹ thuật: 32 clip 1280×720 24fps 10s, không lỗi giải mã. Dò cắt cảnh: B011 (9,92s) và B030 (9,5s, nhảy sang người đi trong bảo tàng) → cắt đuôi + giãn về 10s; bản gốc footage/_orig/.
+- Tạo lại: B003 (camera thấp), B008 (thành phố Địa Trung Hải), B012 (nhà thờ mái vòm năm 1519), B016 (lâu đài cổ tích), B019 (công trường hiện đại, cần cẩu, máy xúc), B024 (bãi đỗ ô tô), B031 (lâu đài cổ tích). Prompt mới: qc/tao_lai_B01-32.md; B050 đổi "castle" → "palace" phòng trước.
+- B014 diễn biến ngược (đất trống → thành phố có kim tự tháp) → đề xuất dùng bản đảo chiều footage/_alt/B014_A014_reverse.mp4.
+- Bài học Muse: "fortress"/"castle" ra lâu đài châu Âu; "foundations" ra công trường hiện đại; mở đầu clip hay có công trình sai thời (mái vòm) rồi mới kéo ra.
+
+## [2026-10-18] qc | 001 CDMX B033–B050 + xóa beat không đạt
+- B033–B050: đạt 13; B037 (Manhattan/Capitol 1934), B041 (lộ mép bàn), B045 + B049 (nhà thờ Gothic, kim tự tháp Maya nguyên vẹn), B050 (lâu đài cổ tích) không đạt. B042 báo cắt cảnh nhầm, giữ nguyên.
+- Theo yêu cầu: xóa 12 clip không đạt (B003, B008, B012, B016, B019, B024, B031, B037, B041, B045, B049, B050); B014 thay bằng bản phát ngược.
+- Prompt mới: `001_beats_tao-lai.csv` (12 dòng) + `qc/tao_lai.md`; CSV đầy đủ cập nhật (bản trước: 001_beats_v3.csv).
+- Phân tích nguyên nhân → trang mới [[city-muse-prompt-rules]]; cập nhật [[city-pipeline]], index.md.
+
+## [2026-10-18] qc | 001 CDMX — QC 12 beat tạo lại
+- Đạt 10: B003, B008, B012, B016, B024, B031, B037, B041, B045, B050 (B008 thành phố xa hơi kiểu Địa Trung Hải; B024/B045 nhà thờ hơi Romanesque/Gothic — chấp nhận).
+- Không đạt 2 (đã xóa): B019 (vẫn Gothic + cần cẩu), B049 (Gothic kiểu Notre-Dame, tàn tích Hy Lạp, lộ phông nền). Nguyên nhân: chữ "cathedral" + "two square bell towers" = Notre-Dame; "no gothic" không đủ. Prompt lượt 2 bỏ chữ cathedral, tả tháp chuông mũ chuông + mái vòm.
+- Cập nhật [[city-muse-prompt-rules]].
+
+## [2026-10-18] qc | 001 CDMX — QC lượt 2 (B019, B049)
+- B049 đạt: nhà thờ tháp mũ chuông + mái vòm, không Gothic, dinh thự, tàn tích thấp, đêm.
+- B019 không đạt: clip là cảnh đêm + tàn tích (nội dung của B049), không phải nhà thờ mọc lên ban ngày — có thể đã dán nhầm prompt B049. Chuyển sang footage/_alt/B049_take2.mp4 (bản dự phòng B049). Bài học: prompt bỏ chữ "cathedral" đã hết Gothic.
+- 2026-10-18: file B049 mới thực ra là nội dung B019 (nhà thờ mọc lên ban ngày, đạt) → đổi thành B019, cắt bỏ 1,15s cuối lộ mép sa bàn + giãn về 10s (gốc: footage/_orig/B019_A019_raw.mp4). Bản đêm B049_take2 → B049. Đủ 50/50 beat đạt QC.
+
+## [2026-10-18] produce | Dựng 001 Ciudad de México hoàn chỉnh
+- B049: chọn bản prompt mới (quảng trường + cột cờ, nhà thờ tháp mũ chuông); 2 bản kia → footage/_orig/.
+- Âm thanh: Ancient Civilisations + The Grey Room + Ancient Civilisations lặp lại (2 bài demo chỉ ~350s < 512s); SFX demo (thiếu tiếng gió/đám đông → beat viento/multitud không có ambience).
+- Kết quả: CT001_ciudad-de-mexico_1080p.mp4 — 8:32, 1920×1080 30fps, AAC 256k, −14,1 LUFS, peak −1,6 dBFS, 1,13 GB; QC: qc/final_sheet_10s.jpg, qc/final_frames.jpg.
+- Sửa ct_build.py (bản cũ: tools/ct_build_bak_20261018.py); mốc CAPÍTULOS +1s (tua ngược 4s).
+- trang bị ảnh hưởng: [[ciudad-de-mexico]], [[city-pipeline]]
+
+## [2026-10-18] produce | Endcard mới chồng lên cảnh cuối (City Timelapse + IronBehemoth)
+- Chủ kênh không thích endcard nền trắng/kem → endcard thành lớp trong suốt chồng lên beat cuối, có lớp tối mờ cho chữ; nút Like/Subscribe/Subscribed tiếng Anh.
+- City Timelapse: ct_endcard.py --overlay, ct_build.py (endcard overlay mặc định, CT_OUT_DIR xuất ra ổ tạm). 001 CDMX dựng lại: CT001_ciudad-de-mexico_1080p.mp4 — 8:24, −14,1 LUFS, peak −1,6 dBFS.
+- IronBehemoth: make_endcard.py --overlay, ib_build.py endcard_style='overlay' (mặc định) dùng clip beat END_AT quay chậm; thử trên 003 Maus (B184) đạt. Bản cũ *.bak_overlay.
+- trang bị ảnh hưởng: [[pipeline]], [[city-pipeline]], [[ciudad-de-mexico]], skill ib-build
+- 2026-10-18: IB thanh kênh thêm nút Like (Like → Subscribe → chuông, con trỏ bấm lần lượt) giống City Timelapse; ib_build.sfx_plan: 3 click (1,30 / 2,05 / 2,80s) + chuông 2,85s; DUR 5,4s. Bản cũ: tools/video/make_subscribe.py.bak_like. Áp dụng cho cả thanh giữa video lẫn end card.
+- 2026-10-18: City Timelapse thêm thanh nhắc Like/Subscribe giữa video: front matter `subscribe: B011+2` (ct_build.py + ct_endcard.py --bar, 3 click + chuông). 001 CDMX: thanh ở 1:46 (cảnh Tenochtitlan rực rỡ, beat không caption); video dựng lại 8:24, −14,1 LUFS.
+
+## [2026-10-18] produce | Kịch bản 004 Inside the Scorpion (ib-script)
+- Không có mẫu đối thủ riêng → theo anh Aron mượn mẫu 003 (Blue Paw Print Maus) để học cấu trúc: `004_scorpion/doi-thu/README.md`, `analysis_004.md`.
+- Nghiên cứu: `raw/tanks/2026-10-18_scorpion.md`, trang mới [[scorpion]]. Lệch nguồn: ngày kỷ lục (26/1 hay 26/3/2002) → chỉ nói năm; xe trúng mìn Tumbledown (Scorpion/Scimitar) → "by most accounts a Scorpion".
+- `script.md` 2.453 từ (~16:34), mở/đóng ở cảnh xe trúng mìn dưới Mount William đêm 13/6/1982 (DRAMATIZATION); 3 câu hỏi, 3 open loop; subscribe ~2:13; cầu nối Inside the Maus. `review_004.md` (review, chính sách, fact-check, QC), `notes.md` (tiêu đề, thông số, nguồn, description, chapters). Chưa tra từ khóa vidIQ.
+- trang bị ảnh hưởng: [[scorpion]], [[topic-backlog]], index.md
+
+## [2026-10-18] produce | CSV tài nguyên 004 Scorpion (ib-assets)
+- Muse 10s (theo anh Aron): 178 beat, 2.453 từ, ~16:34. veo3 93 / footage 42 / image 43, không chuỗi >3 beat cùng loại.
+- `beats/locks.json`: khóa xe Scorpion chỉ tả bằng câu khẳng định (thân hộp thấp, 5 bánh lớn, tháp nhỏ đặt sau, nòng ngắn dày, xanh đậm vằn đen), 4 khóa theo ảnh ref (`ref/scorpion_front34|side|rear34|front.jpg`, anh tự đặt ảnh), PARTS interior/engine_deck/tracks; STYLE Cold War 1970s–1982.
+- Đầu ra: `IronBehemoth-Videos/004_scorpion/beats/beats_004_scorpion.csv` (10 cột đúng mẫu). Chưa có ảnh ref; mô hình 3D NoAI không được dùng làm ref.
+- Lưu ý từ 003: Muse vẽ sai xe ~40%; nếu lặp lại nên làm 2 bước (ảnh tĩnh Flow → Muse animate, camera tĩnh).
+
+## [2026-10-18] qc | 004 Scorpion tài nguyên lượt 1
+- 177/178 beat (thiếu B152). Clip AI 93: đạt 89; tạo lại B046, B059 (nòng dài), B074/B085 dùng 5s đầu.
+- Ảnh/stock: 25 cần thay (sai xe: B006 B011 B040 B044 B049 B058 B091 B121 B143 B164 B167 B169 B029 B035 B062 B079 B081 B086 B101 B106 B127 B177; lệch nội dung: B037 B133 B159). Báo cáo: IronBehemoth-Videos/004_scorpion/qc/qc_footage_004.md.
+- Bài học: kho stock gần như không có Scorpion → beat có tên xe nên lấy Wikimedia/IWM hoặc clip AI có ref.
+
+## [2026-10-18] produce | 004 Scorpion — tạo lại 17 clip trên Muse
+- Chuyển 14 beat ảnh sai xe/lệch nội dung sang clip AI (B006 B011 B037 B040 B044 B049 B058 B091 B121 B133 B159 B164 B167 B169) + tạo lại B046, B059, B152 (thiếu). Prompt: beats/beats_004_scorpion_redo.csv; CSV chính cập nhật (bản trước: beats_004_scorpion_v1.csv).
+- Muse: đoạn chat phụ "Tạo video xe tăng Anh 1970s", batch 2 prompt/tin. B152 bị từ chối lần 1 (blast/flash), viết nhẹ lại (spray of mud and smoke) thì qua. B164 sơn cát sa mạc.
+- Tải: Chrome chặn tải nhiều file từ muse.ai cho tới khi anh Aron cho phép Automatic downloads. File về _flow/ rồi chép vào beats/footage/, bản cũ ở footage/_orig/.
+- QC: 17 clip 1280x720 10s. Đạt 15; B059 nòng vẫn dài ở giữa clip; B152 không thấy tia nổ (xe nằm trong hố, lửa xa) — dùng tạm.
+- Còn lại cần ảnh thật: B029 B035 B062 B079 B081 B086 B101 B106 B127 B143 B177 (Wikimedia/IWM).
+
+## [2026-10-18] qc | 004 Scorpion — ảnh Envato lượt 2
+- Đạt: B079 (tấm nhôm). Không đạt: B035 (BTR-80 bánh lốp), B081 (súng máy cổ), B106 (Challenger 2, không phải King Tiger), B143 (xe bọc thép bánh lốp). Ảnh cũ sai xe còn lại: B029 B062 B086 B101 B127 B177; yếu: B026 (máy bay WWII), B142.
+- Đã chuyển hết sang footage/_orig/. Prompt Flow (Veo 8s) cho 12 beat: beats/beats_004_scorpion_flow.csv. Ảnh ref Maus chép sang 004_scorpion/ref/maus_front34.jpg.
+- 2026-10-18: B177 (cầu nối tập Maus) dùng lại clip 003_maus B158 (Maus kẹt cạnh cây cầu sập) thay vì tạo mới; bỏ B177 khỏi beats_004_scorpion_flow.csv (còn 11).
+- 2026-10-18: B106 (so sánh King Tiger): Flow từ chối prompt xe tăng Đức WWII → dùng lại clip 001_king-tiger B075_A01 (King Tiger bò lên dốc bùn); bỏ B106 khỏi flow CSV (còn 10). Bài học: cảnh xe của tập trước thì lấy lại từ thư mục tập đó.
+- 2026-10-18: B106 (so sánh King Tiger): Flow từ chối prompt xe tăng Đức WWII → dùng lại clip 001_king-tiger B075_A01 (King Tiger bò lên dốc bùn), lưu 004_scorpion/footage/B106_A106.mp4; bỏ B106 khỏi flow CSV (còn 10). Bài học: cảnh xe của tập trước thì lấy lại từ thư mục tập đó.
+- 2026-10-18: 10 clip Flow (B026 B029 B035 B062 B081 B086 B101 B127 B142 B143) đã nhận, mỗi clip chỉ 4,0s (1280x720). Xoá ngôi sao watermark sẵn bằng delogo x=1130 y=570 w=62 h=62 (bản gốc footage/_orig/flow_raw/). CSV chính: 10 beat → veo3, provider "AI da xoa logo" (không chứa flow/veo/google để ib-build không xoá lần 2).
+
+## [2026-10-18] query | Abrams: nguồn hình ảnh + video đối thủ
+- Trả lời từ dữ liệu sẵn có: footage DVIDS/Commons PD dồi dào (demo đã có 13 file); đối thủ đã làm nhiều (Jared Owen 64.9M, 19-Kilo 37.7M, Real Engineering 7.6M...), Blue Paw Print chưa làm Abrams.
+- trang tham chiếu: [[m1-abrams]] · [[footage-sources]] · [[landscape]] · [[topic-backlog]]
+
+## 2026-10-18 — 004_scorpion /ib-build: preview
+- Render chuyển lên container (máy local chậm, tiến trình nền bị kill); footage stage 171 file + tar audio/gfx/build/tools.
+- Hiệu ứng mới trong ib_build.py (backup ib_build.py.bak_fx): `lut` (common/luts/IB_Steel.cube, tạo bằng colour-science/colour BSD-3), `grain` (ffmpeg noise), `shake` [[beat, t0, dur, px]] — cấu hình trong build/ib.json.
+- Preview 720p 977.9 s; QC: I −16.0 LUFS, peak −1.2 dBFS; 3 chapter overlay, title, card_8, subscribe, endcard OK; dip-to-black 0.15 s mỗi cut là thiết kế.
+- B149 (stock sét đêm gần như đen 7 s) → thay bằng B001 (đồi đêm có lửa, callback mở đầu).
+- notes.md chapters cập nhật theo beat_times; credits.md mới. Chờ anh duyệt preview rồi render 1080p.
+- Sửa theo anh (1:41): đoạn 3 câu hỏi B019–B021 đổi từ danh sách góc trái (q1/q2/q3.png) sang thẻ câu hỏi giữa màn hình, mỗi lần 1 câu (ib_qcard.py: gfx/qcard/q01–q03.png + dim.png). ib_build.py thêm overlay `qc:qNN.png@t@d` (nền tối + thẻ phóng nhẹ + whoosh); backup ib_build.py.bak_qcard (trên container). Preview v2: full/IB004_Scorpion_preview_480p_v2.mp4.
+- Theo anh: bỏ chữ QUESTION trên thẻ câu hỏi (ib_qcard.py, mặc định cho mọi tập); tạo lại gfx/qcard, preview v3. Cập nhật skill ib-build: bước 5 tạo thẻ bằng ib_qcard.py, bước 6 dùng `qc:qNN.png@t@d` thay q1/q2/q3, bước 8 ghi chú xóa cache khi đổi PNG, bước 9 QC kiểm thẻ giữa màn hình.
+
+## [2026-10-18] produce | Kịch bản 002 Las Vegas
+- Tham khảo video mẫu Cornerstone (OnuZcxjyQzE). 60 beat × 8s (Veo 3) + tua ngược 4s ≈ 8:04 (chủ kênh: khoảng 8 phút), 10 chương 1829→2026, 53 caption tiếng Anh.
+- Chủ kênh chốt: tiêu đề tiếng Tây Ban Nha, chữ trên màn hình tiếng Anh (mở rộng ngôn ngữ). Front matter `lang: en` (cần thêm vào ct_build/ct_endcard), `delogo` cho Flow, `subscribe: B013+2`.
+- File: CityTimelapse-Videos/002_las-vegas/{kich-ban.md, research.md, _gen_kichban.py}.
+- trang bị ảnh hưởng: [[las-vegas]], index.md
+
+## [2026-10-18] produce | Chốt tiêu đề tập Abrams
+- Tiêu đề: "Inside the Abrams: The World's Most Powerful Tank" (bỏ hướng "fastest" 17/10). Căn cứ 19FortyFive top 1 năm 2026; A/B dự phòng: Heaviest Tank in the World (Guinness, đang phục vụ).
+- trang bị ảnh hưởng: [[m1-abrams]] · IronBehemoth-Videos/005_abrams/outline.md
+
+## [2026-10-18] lint | Kiểm tra nguồn 002 Las Vegas + 001 CDMX
+- API Wikipedia (qua Chrome): LV 40/40 link tồn tại; CDMX 2 link sai tên đã sửa (Tlatelolco_(altepetl), es: Gran_Canal_del_Desagüe_(Ciudad_de_México)). Đối chiếu mốc với nội dung bài.
+- Sửa LV: tên "Las Vegas" — không có bằng chứng Rivera đặt tên (đến thung lũng 12/1829–1/1830), ghi nhận sớm nhất là Frémont 1844 → sửa caption B003/B004 + description; Stewart 1881 (không 1882); thử hạt nhân 65 dặm tây BẮC; bỏ "world's largest hotel" khỏi caption International 1969.
+- CDMX (đã dựng): mọi mốc khớp; ghi chú Tam cường 1428 (thắng chiến tranh) / 1430 (hiệp ước).
+- trang bị ảnh hưởng: [[las-vegas]], [[ciudad-de-mexico]]
+
+## [2026-10-18] produce | Abrams thành tập 005
+- Đổi thư mục IronBehemoth-Videos/004_abrams → 005_abrams; ảnh IB004_F* → IB005_F* (IB004 thuộc Scorpion); sửa nhãn tập trong dàn ý/footage list.
+- trang bị ảnh hưởng: [[m1-abrams]] · [[topic-backlog]] · index.md
+
+## [2026-10-18] produce | Script tập 005 Inside the Abrams
+- Script "Inside the Abrams: The World's Most Powerful Tank": 2.442 từ (~16:30), 3 câu hỏi, 3 open loop, subscribe ~2:37; mở/đóng 73 Easting.
+- Review board + audit chính sách + fact-check + QC (review_005.md); bỏ 3 câu không nguồn; hook nói "one major defense ranking… number one" thay vì khẳng định "most powerful".
+- Dàn ý viết lại theo script; demo 60s giữ ở demo/script.md.
+- trang bị ảnh hưởng: [[m1-abrams]] · [[topic-backlog]] · index.md · raw/tanks/2026-10-18_m1-abrams-bo-sung.md
+- 3D tháo rời (Blender, mô hình LM3D CC BY 4.0) chèn ở B040 (3:35, "How do you fit three men…"), off=1.5, zoom=1.0; credits.md thêm ghi công.
+- Render 1080p trong container (52 phút, 172 shot): 977.9 s (16:18), −16.0 LUFS, peak −2.5 dBFS. Giao qua 83 phần 12 s (full/parts/, part_060 tách a/b vì > 30 MB) → ghép trên máy: full/IB004_Scorpion_1080p.mp4 (875 MB). Chờ anh duyệt để đặt FINAL.
+
+## [2026-10-19] produce | Prompt Veo 3 tập 002 Las Vegas
+- Xem video mẫu (data/001/EVOLUTION-OF-LAS-VEGAS1855–2026.mp4, 18 khung): look = render 3D kiểu bản đồ GIS (nhà khối trơn trắng/xám/pastel, sa mạc cát phẳng, đường nhựa xám, nhìn chéo ~800 m, màu nhạt; đêm = nền tối + cửa sổ sáng + viền neon) — khác look đất sét của CDMX. Ảnh tham chiếu: 002_las-vegas/ref/style_ref_day.jpg, style_ref_night.jpg, sample_sheet.jpg.
+- 60 prompt Veo 3 (8s) → 002_las-vegas/prompts.json + 002_beats.csv (provider=flow, itemType=veo3; vq 375–477, avoid ≤97; 6 kiểu camera không 3 liền). Tool: tools/_lv_prompts.py. ct_csv.py đọc `provider` từ front matter.
+- Áp dụng [[city-muse-prompt-rules]]: không "castle/fort/cathedral/casino", nổ phá = "slowly lowers into pale dust", thử hạt nhân = ánh sáng xa, avoid riêng từng beat.
+- 2026-10-19: QC 5 clip Veo thử (002 LV): đổi tên theo nội dung (B005, B033, B058, B059, B060). Đạt B033/B059/B060; không đạt B005 (thị trấn hiện đại + đường nhựa năm 1855 — do khóa phong cách có "gray asphalt roads") và B058 (ra cây đàn thật, nền đồi cát). Sửa: B002–B013 bỏ "gray asphalt roads" + nhà trắng khỏi khóa, avoid "no town, no roads"; B058 tả "glass hotel tower whose outline is shaped like an electric guitar", avoid "no musical instruments". Vị trí "Veo" khớp delogo 1851,1029,60,39. Bài học: tải nhiều clip Flow cùng lúc mất mã beat trong tên → nhận diện bằng hình.
+- 2026-10-19: B005 + B058 tạo lại ĐẠT (sa mạc trống + khu nhà đất mọc lên; khách sạn kính hình cây đàn giữa các tháp resort). Clip Flow chỉ 4s → kéo chậm 2× bằng minterpolate (mci) lên 8s, soi khung không thấy lỗi; bản gốc 4s ở footage/_orig/. Lưu ý: kiểm tra Flow để thời lượng 8s.
+- 2026-10-19: B005/B058 bản 8s mới (v2) đạt nhưng kém hơn bản 4s kéo chậm (B005 v2: ruộng có sẵn từ đầu, suối thành hẻm vực lớn; B058 v2: tháp đứng giữa đại lộ, có sẵn từ đầu không mọc lên, chói nắng) → giữ bản kéo chậm, v2 ở footage/_alt/.
+- 2026-10-19: QC cuối 60 clip 002 LV — kỹ thuật đạt cả 60 (8s, 1280×720, không cắt cảnh, không trùng). Phong cách đồng đều, khớp video mẫu. Cần tạo lại: B002 (nền title có cả thị trấn adobe — phải là thung lũng trống), B014 (cận cảnh đường phố, biển hiệu có chữ, xe hiện đại), B019 (Flamingo 1946 giữa thành phố dày đặc). Prompt mới đã cập nhật vào 002_beats.csv.
+
+## [2026-10-19] build | CT002 Las Vegas
+- B002/B014/B019 tạo lại đạt QC; xóa 002_beats_tao-lai.csv.
+- ct_build.py/ct_endcard.py: thêm `lang: en` (REWINDING TIME, "Which city should we rebuild next?", "The history of cities, year by year"); backup *_bak_lang.py.
+- Dựng xong CT002_las-vegas_1080p.mp4: 8:03, 1080p, -14.1 LUFS; nhạc tạm dùng lại bộ của 001.
+
+## 2026-10-19 — 004_scorpion: đổi sang giọng clone IB-Clone (clone_2700943)
+- Lý do: bình luận khán giả tập 002 chê giọng AI "robotic" (Russ speed 0.85 + atempo). Anh Aron tự thu 3:31 giọng → mẫu 29 s `_voice_clone/thuandv_clone_29s.wav` → clone trên ai33 (MiniMax speech-02-hd).
+- Voice tập 4: 10 đoạn theo chương (audio/clone/chunk_NN.txt/.mp3/.json), speed 1.0, thẻ `<break>` 0.3/0.6 s, ghép bằng tools/video/ib_voice_join.py (cân −15 LUFS mỗi đoạn, nghỉ 0.7 s giữa chương, đổi số → chữ trong transcript). 155 wpm, khớp chữ 99,1%. Bản Russ cũ: audio/_russ_old/.
+- Căn lại: ib_align (178 beat), dời SFX + shake theo từ, edit_shotmap (chapter card lùi để hiện đủ 3 s; gộp B077+B078; B149→B001; B040 3D off=1.0), make_music.
+- ib_build.py: thêm `limit` và `post_gain` trong ib.json (trước đây limiter 0.6 làm bản dựng chỉ −16 LUFS). Tập 4: loudness −14.6, limit 0.85, post_gain 1.4 → −14,7 LUFS, peak −1,3 dBFS.
+- Bản cuối: full/IB004_Scorpion_1080p.mp4 (16:04, 868 MB); bản Russ cũ → full/IB004_Scorpion_1080p_russ.mp4. dubprep: voice/004_scorpion.srt (177 câu) + .mp3, script_004_scorpion.txt, _tmp_skill/*_nhac/_sfx.flac cho long-tieng.
+- Lưu ý chuyển file: file âm thanh (mp3/flac) qua thư mục outputs bị thay đổi nội dung → gói tar rồi mới chuyển, kiểm md5 trên máy.
+- Chapters mới: 0:00 · 2:16 · 3:26 · 5:04 · 6:32 · 8:30 · 10:05 · 10:46 · 12:12 · 14:29 (notes.md, index/public-en.txt).
+
+## [2026-10-19] produce | Thumbnail v2 tập 002 Sturmtiger
+- Prompt mới: cắt lớp nền đen, 3 kíp lái nạp đạn 380 mm, ánh cam #E0662B, siết độ nét (không khói/tuyết/nền rối); phương án B quy mô, C chữ "10 MIN" thêm bằng Canva.
+- File: IronBehemoth-Videos/002_sturmtiger/thumbnail/prompt_thumbnail_v2.md; tham chiếu [[thumbnail-formula]] · [[blue-paw-print]]
+- 2026-10-19: thumbnail tập 4 (thumbnail/): ảnh gốc ChatGPT 1672×941 (full/inside-the-scorpion*.png) → 1280×720: overcast (không chữ), bluesky (không chữ), overcast_82kmh ("82 KM/H" + nhãn cam "WORLD'S FASTEST TANK"). Gợi ý chạy Test & Compare 3 bản.
+- 2026-10-19: ib-assets 005_abrams (Muse 10 s): 178 beat, 2.442 từ, ~16:30; 99 veo3 / 57 footage / 22 image → beats/beats_005_abrams.csv. Khóa xe Abrams tả bằng hình dạng (không tên xe trong prompt), 3 ảnh ref PD trong ref/ (front F03, side F01, 3/4 F08), PARTS: interior/roof/door/engine/sight. B177 (Scorpion) nên dùng lại clip tập 004.

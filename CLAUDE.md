@@ -28,11 +28,12 @@ Não này dùng chung cho nhiều kênh; mỗi kênh có thương hiệu, skill 
 | Kênh | Wiki | Raw | Sản xuất |
 |---|---|---|---|
 | IronBehemoth (xe tăng) | `wiki/` (các nhóm channel/format/production/strategy/competitors/tanks ở gốc) | `raw/` (gốc) | `Youtube-AI/IronBehemoth-Videos/` |
-| Skyline Rewind (@SkylineRewind; 3D timelapse lịch sử thành phố) | `wiki/skyline-rewind/` (channel/format/production/strategy/competitors/cities) | `raw/skyline-rewind/` | `Youtube-AI/SkylineRewind-Videos/` |
+| City Timelapse (@CityTimelapseHQ đề xuất; 3D timelapse lịch sử thành phố) | `wiki/city-timelapse/` (channel/format/production/strategy/competitors/cities) | `raw/city-timelapse/` | `Youtube-AI/CityTimelapse-Videos/` |
 
 - Trang của kênh không phải IronBehemoth có thêm trường frontmatter `channel: <slug>`; tên file phải duy nhất toàn não (vd. `city-overview`, không dùng `overview`).
-- "Quy tắc cứng của kênh" bên dưới chỉ áp dụng cho IronBehemoth; quy tắc kênh Skyline Rewind nằm ở [[city-overview]] và [[city-format-blueprint]].
+- "Quy tắc cứng của kênh" bên dưới chỉ áp dụng cho IronBehemoth; quy tắc kênh City Timelapse nằm ở [[city-overview]] và [[city-format-blueprint]].
 - Skill `ib-*` chỉ dành cho IronBehemoth.
+- Kênh City Timelapse lên sóng bằng **tiếng Tây Ban Nha** (title, description, chữ trên màn hình); nội dung nội bộ vẫn tiếng Việt.
 
 ## Quy ước trang wiki
 

@@ -1,9 +1,9 @@
 ---
 title: Cornerstone Timelapse
 type: competitor
-channel: skyline-rewind
+channel: city-timelapse
 updated: 2026-10-17
-sources: [raw/skyline-rewind/competitors/2026-10-17_cornerstone-timelapse.md]
+sources: [raw/city-timelapse/competitors/2026-10-17_cornerstone-timelapse.md]
 ---
 
 # Cornerstone Timelapse

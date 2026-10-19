@@ -49,3 +49,5 @@ sources: [raw/references/2026-10-11_owner-decisions.md]
 - `ib_build.py render` từ chối dựng khi còn thiếu tài nguyên, đồ họa, voice hoặc nhạc.
 - Watermark ngôi sao chỉ có ở clip Flow (`provider=flow`), clip Muse không xử lý.
 - Key ai33 nằm ở `.secrets/ai33.env` (đã gitignore), không ghi vào skill hay wiki.
+
+- **End card kiểu chồng lên cảnh cuối (từ 2026-10-18, mặc định):** `ib_build.py` dùng clip của beat kêu gọi cuối (END_AT), quay chậm cho đủ thời lượng, rồi chồng `make_endcard.py --overlay` (logo + IRON BEHEMOTH trắng + tagline trên lớp tối mờ, PNG trong suốt) và thanh Subscribe. Không còn nền banner. Muốn quay lại banner: `"endcard_style": "banner"` trong `build/ib.json`. Bản cũ: `tools/video/*.bak_overlay`.
