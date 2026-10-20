@@ -381,3 +381,19 @@
 - File: IronBehemoth-Videos/002_sturmtiger/thumbnail/prompt_thumbnail_v2.md; tham chiếu [[thumbnail-formula]] · [[blue-paw-print]]
 - 2026-10-19: thumbnail tập 4 (thumbnail/): ảnh gốc ChatGPT 1672×941 (full/inside-the-scorpion*.png) → 1280×720: overcast (không chữ), bluesky (không chữ), overcast_82kmh ("82 KM/H" + nhãn cam "WORLD'S FASTEST TANK"). Gợi ý chạy Test & Compare 3 bản.
 - 2026-10-19: ib-assets 005_abrams (Muse 10 s): 178 beat, 2.442 từ, ~16:30; 99 veo3 / 57 footage / 22 image → beats/beats_005_abrams.csv. Khóa xe Abrams tả bằng hình dạng (không tên xe trong prompt), 3 ảnh ref PD trong ref/ (front F03, side F01, 3/4 F08), PARTS: interior/roof/door/engine/sight. B177 (Scorpion) nên dùng lại clip tập 004.
+
+## [2026-10-20] build | Tập 005 Abrams — 1080p xong
+- Voice IB-Clone qua API (ib_tts_clone.py, 11 chunk theo chương, speed 1.0, break 0.3/0.6 s); chunk 11 bị 429 → làm riêng. Ghép 15:57, khớp chữ 98,7%, 178/178 beat.
+- ib_tts_clone.py sửa: gửi từng đoạn một, tự chờ khi 429, lưu task id ngay (_tasks.json); thêm --one.
+- QC ảnh: thay ảnh stock sai xe (T-72/T-90 B013·B084·B109, Challenger 2 B031·B163, BMD B134, Panzer B027, xe khác B035) và ảnh người mẫu (B030/B153) bằng ảnh Abrams thật Wikimedia PD; bỏ B151 (lịch DEC 31). Chữ trên màn hình: bỏ "19FORTYFIVE"/"AGT1500" (chữ lẫn số), SEP V3, ≈ 40 MAIN GUN ROUNDS ON BOARD, ≈ 8 SECONDS, NEARLY 70 TONNES; bỏ nhãn GULF WAR/UKRAINE trên ảnh stock.
+- Kết quả: full/IB005_Abrams_1080p.mp4 (16:07, −15.0 LUFS, peak −0.9 dBFS), voice/005_abrams.srt + mp3, _tmp_skill nhạc/sfx flac, script_005_abrams.txt, credits.md, chapters trong notes.md.
+
+## [2026-10-20] produce | Tập 006 Tiger I — script
+- Nghiên cứu đối thủ (raw/competitors/2026-10-20_top-tank-videos-for-ep6.md): Tiger I nhu cầu cao, Blue Paw Print chưa làm.
+- Theo yêu cầu anh Aron: bám đối thủ, học hook "This is the …". Phân tích King Tiger + Sturmtiger của Blue Paw Print → analysis_006.md (mạnh: hook gọi tên + nghịch lý, tour cố định, chuỗi bắn bằng lệnh kíp lái; yếu: thông số khô, không câu chuyện, trích chỉ huy SS, CTA yếu).
+- Script 2.451 từ: hook kiểu đối thủ + open loop Tiger 131, bỏ 3 câu hỏi. Kèm review_006.md, notes.md; tạo [[tiger-i]], cập nhật [[topic-backlog]], index.
+
+## [2026-10-20] produce | ib-assets 006_tiger (Muse 10 s)
+- 173 beat, 2.458 từ; 139 veo3 (56 beat kiểu 3D Blue Paw Print: sàn bóng, x-ray cyan, exploded view) / 19 image / 15 footage → beats/beats_006_tiger.csv.
+- Khóa xe Tiger I tả bằng hình dạng (không tên xe trong prompt), 3 ảnh ref Wikimedia (CC BY/BY-SA) ghi trong ref/CREDITS.md; ib_beats.py thêm "style": "3d" → STYLE_3D.
+- Hook gây cấn: xe lao ra khỏi khói, xích nghiền tường, đạn nảy khỏi giáp trước, kíp lái nhảy khỏi xe bỏ chạy.

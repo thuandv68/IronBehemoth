@@ -39,6 +39,7 @@ Cập nhật: 2026-10-11 · 21 trang wiki · 5 nguồn raw
 - [[maus]] — `wiki/tanks/maus.md` — Tập 003, nặng nhất từng chế tạo, kíp lái tự phá, Kubinka ghép 2 xe.
 - [[m1-abrams]] — `wiki/tanks/m1-abrams.md` — Tập 005, "The World's Most Powerful Tank", turbine 1.500 shp, 73 Easting.
 - [[scorpion]] — `wiki/tanks/scorpion.md` — Tập 004, xe tăng nhanh nhất (Guinness 82,23 km/h), máy Jaguar, Falklands 1982.
+- [[tiger-i]] — `wiki/tanks/tiger-i.md` — Tập 006, chiếc Tiger duy nhất còn chạy (Tiger 131), hook kiểu Blue Paw Print.
 
 ## Kênh City Timelapse (@CityTimelapseHQ đề xuất, kênh riêng, chung não)
 - [[city-overview]] — `wiki/city-timelapse/channel/city-overview.md` — Ý tưởng, định vị đề xuất, quyết định chờ chốt, thành phố ứng viên.
@@ -61,6 +62,8 @@ Cập nhật: 2026-10-11 · 21 trang wiki · 5 nguồn raw
 - `raw/keywords/2026-10-11_vidiq-keyword-research.md` — Keyword vidIQ (12 seed, volume/competition/overall).
 - `raw/references/2026-10-11_llm-wiki-pattern.md` — Tóm tắt mô hình LLM Wiki.
 - `raw/references/2026-10-11_owner-decisions.md` — Các quyết định của chủ kênh.
+- `raw/tanks/2026-10-20_tiger-i.md` — Ghi chú nghiên cứu Tiger I + Tiger 131 (Tank Museum 2019, mảnh đạn 2025).
+- `raw/competitors/2026-10-20_top-tank-videos-for-ep6.md` — Video xe tăng nhiều view nhất (chọn tập 006).
 - `raw/tanks/2026-10-15_maus.md` — Ghi chú nghiên cứu Maus (Guinness, Wikipedia, Panzerworld, Tank Archives).
 - `raw/tanks/2026-10-17_m1-abrams.md` — Ghi chú nghiên cứu Abrams (Wikipedia, Honeywell, CRS, 73 Easting).
 - `raw/tanks/2026-10-18_m1-abrams-bo-sung.md` — Bổ sung tập 005 (19FortyFive, Army Technology, AFV Database, HistoryNet, National Interest, CRS 4/2026).

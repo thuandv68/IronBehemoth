@@ -28,6 +28,8 @@ sources: [raw/competitors/2026-10-11_blue-paw-print-inside-series.md]
 - 004 **FV101 Scorpion** (chọn 17/10/2026): "xe tăng nhanh nhất thế giới" – kỷ lục Guinness 82,23 km/h (2002). Abrams lùi sang tập sau (đã có nghiên cứu + dàn ý + demo, nay ở 005_abrams). Script 2026-10-18: "Inside the Scorpion: The Fastest Tank in the World", 2.453 từ (~16:34); mượn mẫu 003, góc "nhẹ quan trọng hơn nhanh" + nghi binh Mount William 1982.
 - 005 **M1A2 Abrams** (chốt 18/10/2026): tiêu đề "Inside the Abrams: The World's Most Powerful Tank" (19FortyFive top 1 năm 2026). Thư mục IronBehemoth-Videos/005_abrams/ (nghiên cứu, dàn ý, demo 60s, 13 ảnh PD). Script 18/10: 2.442 từ (~16:30), dàn ý + review + notes xong; bước tiếp: ib-assets.
 
+- 006 **Tiger I** (chốt 20/10/2026): "Inside the Tiger: The Most Feared Tank of WWII". Cấu trúc mới theo hook Blue Paw Print ("This is the Tiger.") + tour cố định + xâu chuỗi Tiger 131; bỏ 3 câu hỏi. Script 2.451 từ. Bước tiếp: ib-assets.
+
 ## Kho dự trữ
 **WWII:** IS-2, Elefant/Ferdinand, Jagdpanther, M26 Pershing, Churchill (Crocodile), Char B1 bis, Char 2C (xe tăng lớn nhất từng đưa vào biên chế), T-35 (5 tháp pháo), Panzer IV, T-28, M3 Lee, Matilda II, KV-1, ISU-152.
 **Hiện đại:** T-90M, Challenger 2, Merkava IV, K2 Black Panther, T-14 Armata, Type 99A, Leclerc, M10 Booker, T-72.

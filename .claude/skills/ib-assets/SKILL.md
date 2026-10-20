@@ -30,6 +30,8 @@ Chép từ `IronBehemoth-Videos/tools/video/templates/locks.json`, sửa cho xe 
 
 - **Bài học tập 003:** mô tả xe theo đúng góc của ảnh ref. `locks.json` có `TANK_BY_REF` (mỗi ảnh ref một khóa: câu "View as in the reference photo…" + thân/tháp/nòng/sơn/tỉ lệ theo thứ tự cố định), `PARTS` cho cảnh chỉ thấy một phần xe (gán `"part"` trong beatmap: nóc xe, tháp rời, thân không tháp, hai xe giống nhau). Mọi bổ sung chỉ nằm trong nội dung prompt; CSV chỉ được có đúng các cột của `raw/assets/mau_beat.csv`. Không để ghi chú dựng ("overlay", "later") lọt vào `desc` của veo3.
 
+- **Từ tập 006 (anh Aron chọn dựng theo kiểu Blue Paw Print):** hook và trận đánh dùng cảnh điện ảnh gây cấn (khói, lửa đầu nòng, đạn nảy khỏi giáp, kíp lái bỏ xe); các beat giải thích kỹ thuật dùng `"style": "3d"` trong beatmap → prompt lấy `STYLE_3D` của locks (mô hình 3D đứng một mình trên sàn xám bóng phản chiếu, nền thị trấn đổ nát mờ, x-ray giáp chuyển cyan trong suốt để lộ kíp lái/đạn/động cơ, exploded view, linh kiện xoay trên nền đen, đường đo kích thước trắng). Chữ/số đo thêm ở bước đồ họa, không để AI vẽ.
+
 ## 3b. Nguyên tắc bắt buộc: đúng xe
 Lời đọc nói về xe nào thì hình phải là đúng xe đó. Không lấy xe khác "trông giống" để thế chỗ.
 - Beat nói về xe của tập: chỉ dùng **image** có tên xe (ảnh thật, bảo tàng, Bundesarchiv), hoặc **veo3** có khóa TANK kèm ảnh tham chiếu. Không dùng **footage** stock, vì kho stock không có xe này.
